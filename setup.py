@@ -1,3 +1,4 @@
+from pathlib import Path
 from setuptools import setup
 
 # TODO: Figure out what's the correct way to handle C-dependencies and RTD.
@@ -11,4 +12,5 @@ setup(name='minsketch',
       author_email='guy@minerva.kgi.edu',
       license='MIT',
       packages=['minsketch'],
+      install_requires=Path("requirements.txt").read_text().splitlines(),
       zip_safe=True,)

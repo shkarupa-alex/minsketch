@@ -6,11 +6,11 @@ https://www.eecs.harvard.edu/~michaelm/postscripts/rsa2008.pdf
 import math
 from gmpy2 import next_prime
 
-import count_min_sketch
-import hash_strategy
-import lossy_strategy
-import sketch_tables
-import update_strategy
+from minsketch import count_min_sketch
+from minsketch import hash_strategy
+from minsketch import lossy_strategy
+from minsketch import sketch_tables
+from minsketch import update_strategy
 
 
 class HashPairCMSketch(count_min_sketch.TopNCountMinSketch):

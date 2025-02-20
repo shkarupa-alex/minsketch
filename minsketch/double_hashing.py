@@ -48,7 +48,7 @@ class HashPairCMSketch(count_min_sketch.TopNCountMinSketch):
         width = next_prime(int(math.ceil(2 * math.e / epsilon)))
         depth = int(
             math.ceil(math.log(1.0 / (epsilon - epsilon / (2 * math.e**2)))))
-        print('The effective delta is {delta}'.format(delta=math.exp(-1 *
+        # print('The effective delta is {delta}'.format(delta=math.exp(-1 *
                                                                      depth)))
 
         if hash_gen is None:

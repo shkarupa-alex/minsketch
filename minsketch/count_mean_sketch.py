@@ -11,8 +11,8 @@ from itertools import izip
 
 from numpy import median
 
-import count_min_sketch
-import double_hashing
+from minsketch import count_min_sketch
+from minsketch import double_hashing
 
 
 # TODO: Re-consider design here at some point - Mixins? Different abstraction?

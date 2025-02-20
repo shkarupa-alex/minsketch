@@ -7,11 +7,11 @@ keeps track of some number of most commonly recurring items.
 import math
 from itertools import izip
 
-import hash_strategy
-import heap
-import lossy_strategy
-import sketch_tables
-import update_strategy
+from minsketch import hash_strategy
+from minsketch import heap
+from minsketch import lossy_strategy
+from minsketch import sketch_tables
+from minsketch import update_strategy
 
 
 DEFAULT_N = 100

@@ -7,8 +7,6 @@ The design here is a little iffy - there's a fair amount of code duplication
 between the two classes. Perhaps a mixin would fit better, or changing the
 abstractions.
 """
-from itertools import izip
-
 from numpy import median
 
 from minsketch import count_min_sketch
@@ -36,7 +34,7 @@ class CountMeanMinSketch(count_min_sketch.TopNCountMinSketch):
         return min(
             median(
                 sorted([value - error
-                        for value, error in izip(values, error_estimates)])),
+                        for value, error in zip(values, error_estimates)])),
             min(values))
 
     def most_common(self, k=None):
@@ -74,7 +72,7 @@ class HashPairCountMeanMinSketch(double_hashing.HashPairCMSketch):
         return min(
             median(
                 sorted([value - error
-                        for value, error in izip(values, error_estimates)])),
+                        for value, error in zip(values, error_estimates)])),
             min(values))
 
     def most_common(self, k=None):

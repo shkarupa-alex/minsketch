@@ -7,7 +7,7 @@ from itertools import izip
 
 import numpy
 
-import count_min_sketch
+from minsketch import count_min_sketch
 
 
 class LeastSquaresTopNSketch(count_min_sketch.TopNCountMinSketch):

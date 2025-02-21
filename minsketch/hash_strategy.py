@@ -4,6 +4,7 @@ described by Cormen et al., and a hash-pair strategy as discussed by Kirsch and
 Mitzenmacher (2008).
 """
 import random
+from functools import partial
 
 ARBITRARY_LARGE_PRIME_NUMBER = 4294967291  # Largest 32 bit prime
 
@@ -37,7 +38,10 @@ class UniversalHashFunctionGenerator(object):
         self.a_set.add(a)
         self.b_set.add(b)
 
-        return lambda x: ((a * x + b) % ARBITRARY_LARGE_PRIME_NUMBER) % self.m
+        return partial(self._fn, a=a, b=b)
+
+    def _fn(self, x, a, b):
+        return ((a * x + b) % ARBITRARY_LARGE_PRIME_NUMBER) % self.m
 
 
 class NaiveHashingStrategy(object):

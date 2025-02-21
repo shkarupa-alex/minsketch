@@ -30,7 +30,7 @@ class SketchCounterHybrid(object):
         self.current_batch = 0
 
     def _digest_counter(self):
-        self.sketch.update(*zip(*self.counter.iteritems()))
+        self.sketch.update(*zip(*self.counter.items()))
         self.counter = Counter()
         self.current_batch = 0
 
